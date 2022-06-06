@@ -28,4 +28,11 @@ public class MarqueFacade extends AbstractFacade<Marque> {
         super(Marque.class);
     }
     
+    
+    
+    public Marque findmarque (String marque){
+        Marque marque_find  = em.find(Marque.class, marque);
+        return marque_find;
+    }
+    
 }

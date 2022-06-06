@@ -12,6 +12,14 @@
         <servlet-name>ListingProduit</servlet-name>
         <servlet-class>servlets.ListingProduit</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SuppressionProduit</servlet-name>
+        <servlet-class>servlets.SuppressionProduit</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModificationProduit</servlet-name>
+        <servlet-class>servlets.ModificationProduit</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Creation</servlet-name>
         <url-pattern>/Creation</url-pattern>
@@ -23,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>ListingProduit</servlet-name>
         <url-pattern>/ListingProduit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SuppressionProduit</servlet-name>
+        <url-pattern>/SuppressionProduit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModificationProduit</servlet-name>
+        <url-pattern>/ModificationProduit</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

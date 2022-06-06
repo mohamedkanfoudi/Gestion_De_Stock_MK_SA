@@ -4,6 +4,8 @@
     Author     : MK
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="entites.Marque"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -88,7 +90,7 @@
                         <li>
                             
                             <a href="./calendrierPatient.html?annee=$annee&mois=$mois&jour=$jour">
-                                <i class="fas fa-calendar-alt"></i>Reserver un rendez-vous</a>
+                                <i class="fas fa-calendar-alt"></i>Ajouter un produit</a>
                         </li>
                         
                         
@@ -195,44 +197,58 @@
                         <div class="row">
                             <div class="col">
                               <div class="au-card">
-                              <form method="post" class="container corps mt-3 mx-auto position-relative">
+                              <form action="http://localhost:8080/Gestion_De_Stock_MK_SA-war/CreationProduit"
+                                    method="post" class="container corps mt-3 mx-auto position-relative">
               <div class="text-success">
-                vos information
+                Entrez les informations de produit : 
               </div>
               <div class="formul" style="margin-left: 150px;width:400px">
                 <div class="row">
-                  <label for="nom" class="pt-3 form-label col-3">Nom</label>
-                  <input value=nom type="text" name="nom" class="form-control-sm col-8 mt-auto bg-warning" id="nom" style="height: 15px;" >
+                  <label for="nomref" class="pt-3 form-label col-3">Nom de produit</label>
+                  <input value=nomref type="text" name="nomref" class="form-control-sm col-8 mt-auto bg-warning" id="nomref" style="height: 15px;" >
                 </div>
+                  
+                  <div class="row marque">
+                                            <label for="marque" class="form-label">Marque</label></br>
+                                            <select class="form-select form-select-lg mb-3"
+                                                    name="marque" id="marque" required>
+                                                <option selected >choisir la marque</option>
+                                                 <% 
+                                                 List<Marque> ListMarque = (List<Marque>) request.getAttribute("ListMarque");
+                                                    for (int i = 0; i < ListMarque.size(); i++){
+                                                %>
+                                                <option value="<%= ListMarque.get(i).getNomMarque() %>">
+                                                    <%= ListMarque.get(i).getNomMarque() %></option>
+                                                <% } %>
+                                            </select>
+                                        </div>
                 
                 <div class="row">
-                  <label for="prenom" class="pt-3 form-label col-3">Prenom</label>
-                  <input value="prenom" type="text" name="prenom" class="form-control-sm col-8 mt-auto bg-warning" id="prenom" style="height: 15px;" >
+                  <label for="denomination" class="pt-3 form-label col-3">Dénomination</label>
+                  <input value="denomination" type="text" name="denomination" 
+                         class="form-control-sm col-8 mt-auto bg-warning" id="denomination" style="height: 15px;" >
                 </div>
-                
                 <div class="row">
-                  <label for="telephone" class="pt-3 form-label col-3">Telephone</label>
-                  <input value=telephone type="text" name="telephone" class="form-control-sm col-8 mt-auto bg-warning" id="telephone" style="height: 15px;" >
+                  <label for="prix" class="pt-3 form-label col-3">Prix</label>
+                  <input value="prix" type="text" name="prix" 
+                         class="form-control-sm col-8 mt-auto bg-warning" id="prix" style="height: 15px;" >
                 </div>
-                
                 <div class="row">
-                  <label for="email" class="pt-3 form-label col-3">Email</label>
-                  <input value=email type="email" name="email" class="form-control-sm col-8 mt-auto bg-warning" id="email" style="height: 15px;" >
+                  <label for="poids" class="pt-3 form-label col-3">Poids</label>
+                  <input value="poids" type="text" name="poids" 
+                         class="form-control-sm col-8 mt-auto bg-warning" id="poids" style="height: 15px;" >
                 </div>
-                
+                <div class="row">
+                  <label for="volume" class="pt-3 form-label col-3">Volume</label>
+                  <input value="volume" type="text" name="volume" 
+                         class="form-control-sm col-8 mt-auto bg-warning" id="volume" style="height: 15px;" >
+                </div>
+                                          
+      
                 
               </div>
-              <div class="text-danger mt-2">*Note:si vous souhaitez changer ces information veulleiz accéder à votre profil</div>
-              <div class="text-danger mt-2">*Vous devez payer la recette pour confirmer votre rendez-vous</div>
-              <hr class="mx-auto">
-              <pre><div class="text-success">Votre réservation:</div>
-
-consultation avec le Docteur dans le:12/12/12
-
-              </pre>
-              
+             
               <input type="submit" name="confirmer" value="confirmer" class="btn btn-primary position-absolute" style="right: 5px;">
-                <input type="submit" name="annuler" value="annuler le rendez vous" class="btn btn-danger position-absolute" style="right: 11px;width:210px">
                 <i class="far fa-window-close position-absolute" style="right: 12px;top:437px;"></i>
 
              
@@ -246,7 +262,7 @@ consultation avec le Docteur dans le:12/12/12
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2022 C4GAMES. All rights reserved.</p>
+                                    <p>Copyright © 2022 MKSA. All rights reserved.</p>
                                 </div>
                             </div>
                         </div>

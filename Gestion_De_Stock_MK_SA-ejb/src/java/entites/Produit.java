@@ -22,7 +22,7 @@ public class Produit implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int RefProduit;
+    private String RefProduit;
 
     private String Dénomination;
     private double Prix;
@@ -32,7 +32,7 @@ public class Produit implements Serializable {
     @ManyToOne
     public Marque MarqueProduit;
 
-    public Produit(int refProduit,Marque marqueProduit, 
+    public Produit(String refProduit,Marque marqueProduit, 
 			String dénomination,
 			double prix, double poids, double volume
 			) {
@@ -49,11 +49,11 @@ public class Produit implements Serializable {
     public Produit() {   
     }
 
-    public int getRefProduit() {
+    public String getRefProduit() {
         return RefProduit;
     }
 
-    public void setRefProduit(int RefProduit) {
+    public void setRefProduit(String RefProduit) {
         this.RefProduit = RefProduit;
     }
 

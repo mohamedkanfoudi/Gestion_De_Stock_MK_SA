@@ -7,6 +7,7 @@ package servlets;
 
 import entites.Marque;
 import entites.MarqueFacade;
+import entites.Produit;
 import entites.ProduitFacade;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,11 +46,51 @@ public class CreationProduit extends HttpServlet {
     protected void doGet
 	(HttpServletRequest req , HttpServletResponse res ) 
 	throws ServletException , IOException{
-		res.setContentType("text/html;charset=UTF-8");
+		try{
+                        res.setContentType("text/html;charset=UTF-8");
 		PrintWriter out  = res.getWriter();
 		//out.println("ici nous");
+                
+                List<Marque> Listmarque = marque.findAll();
+                req.setAttribute( "ListMarque", Listmarque );
 		this.getServletContext().getRequestDispatcher("/addProduit.jsp").forward(req , res);
-	}
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+                }
+        
+    protected void doPost
+        (HttpServletRequest req , HttpServletResponse res)
+        throws ServletException , IOException{
+         
+            try{
+                
+                res.setContentType("text/html;charset=UTF-8");
+                PrintWriter out = res.getWriter();
+                String nomref = req.getParameter("nomref");
+                String denomination = req.getParameter("denomination");
+                double prix = Double.parseDouble(req.getParameter("prix"));
+                double poids = Double.parseDouble(req.getParameter("poids"));
+                double volume = Double.parseDouble(req.getParameter("volume"));
+                
+                
+                String marqueparameter = req.getParameter("marque");
+                Marque  m = marque.findmarque(marqueparameter);
+                
+                Produit produit_cree = new Produit(nomref , m , denomination , prix , poids , volume);
+        
+                boolean cree = produit.createProduit(produit_cree);
+                   if( cree ){
+                       res.sendRedirect("ListingProduit");
+                   }else{
+                       res.sendRedirect("CreationProduit");
+                       
+                   }
+                   
+                   }catch(Exception e){
+                    e.printStackTrace();
+                }
+        }
 	
 
    

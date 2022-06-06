@@ -29,6 +29,8 @@ public class ProduitFacade extends AbstractFacade<Produit> {
         super(Produit.class);
     }
 
+    
+    
     public boolean createProduit(Produit p ) {
     	Produit pp = em.find(Produit.class, p.getRefProduit());
     	if(pp == null) {
@@ -44,7 +46,7 @@ public class ProduitFacade extends AbstractFacade<Produit> {
     
     }
     
-    public boolean deleteProduit(int refP) {
+    public boolean deleteProduit(String refP) {
     	Produit p = em.find(Produit.class, refP);
     	if(p!=null) {
     		em.remove(p);
