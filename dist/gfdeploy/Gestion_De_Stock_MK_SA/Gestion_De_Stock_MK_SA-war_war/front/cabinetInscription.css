@@ -1,0 +1,32 @@
+body {
+    width: 100%;
+    height: 90vh;
+    background: url("../projet_cabinet/assets/img/bg-inscription.jpg") top center;
+    background-size: cover;
+    margin-bottom: -200px;
+  }
+
+h3{
+    width: 500px;
+    margin-top: 7px;
+    color: #1A237E;
+}
+.nomComplet input
+{
+    width: 45%;
+}
+.adresse input
+{
+    height:45px;
+}
+input[type="date"]
+{
+    height: 36px;
+    width: 100%;
+}
+input[type="submit"]
+{
+    width: 90px;
+    background-color: #c01515;
+    color: #90CAF9;
+}

@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+  width: 100%;
+}
+
+.flex-child {
+    flex: 1;
+  /* border: 2px solid blueviolet; */
+  margin: 20px;
+} 
+.hamza {
+    color: green;
+}
+tab1 {
+    padding-left: 6em;
+}
+h1{
+    text-align: center;
+}

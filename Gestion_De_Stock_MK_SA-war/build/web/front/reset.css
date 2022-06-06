@@ -1,0 +1,102 @@
+body
+{
+    background-image: url("images2.jfif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+
+.main {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: 400px;
+    margin: 5em auto;
+    border-radius: 1.5em;
+}
+
+.signin {
+    padding-top: 40px;
+    color: rgb(52, 84, 226);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.identifiant {
+width: 76%;
+font-weight: 700;
+font-size: 16px;
+background: rgb(241, 240, 240);
+padding: 10px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 20px;
+font-family: sans-serif;
+}
+
+form.form1 {
+    padding-top: 40px;
+}
+
+.motdepasse {
+width: 76%;
+font-weight: 700;
+font-size: 16px;
+background: rgb(241, 240, 240);
+padding: 10px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 20px;
+font-family: sans-serif;
+}
+
+
+.identifiant:focus, .motdepasse:focus {
+    border: 2px solid rgb(201, 197, 197) !important;
+    
+}
+
+.soumettre {
+    cursor: pointer;
+    border-radius: 5em;
+    color: rgb(243, 235, 235);
+    background-color: rgb(52, 84, 226);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: sans-serif;
+    margin-left: 20%;
+    font-size: 15px;
+    text-align: center;
+}
+.soumettre:hover {
+    background-color: rgb(0, 183, 255);
+}
+
+.oublie {
+    padding-top: 20px;
+    text-align: center;
+}
+.oublie:hover {
+    text-decoration: underline;
+}
+a {
+    color: rgb(0, 183, 255);
+    font-family: sans-serif;
+    text-decoration: none;
+    
+}
+
+
